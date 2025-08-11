@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const myname = "Bui Thi Tuyet Nhi"; // Define the variable
+  const myname = "Bui Thi Tuyet Nhi"; 
 
   return (
     <div className="App">
