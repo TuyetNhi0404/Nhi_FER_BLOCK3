@@ -1,6 +1,7 @@
-"use client"
+
 import { Offcanvas, Button, ListGroup, Badge, Row, Col } from "react-bootstrap"
 import { useCart } from "../context/CartContext"
+import { Plus, Minus, Trash2 } from "lucide-react"
 
 const CartSidebar = ({ show, onHide }) => {
   const { cart, removeFromCart, updateCartQuantity, getTotalCartPrice } = useCart()
@@ -34,8 +35,9 @@ const CartSidebar = ({ show, onHide }) => {
                           size="sm"
                           variant="outline-secondary"
                           onClick={() => updateCartQuantity(item.id, item.quantity - 1)}
+                          style={{ borderColor: "#8b4513", color: "#8b4513" }}
                         >
-                          -
+                          <Minus size={14} color="#8b4513" />
                         </Button>
                         <Badge bg="light" text="dark" className="mx-2">
                           {item.quantity}
@@ -44,17 +46,20 @@ const CartSidebar = ({ show, onHide }) => {
                           size="sm"
                           variant="outline-secondary"
                           onClick={() => updateCartQuantity(item.id, item.quantity + 1)}
+                          style={{ borderColor: "#8b4513", color: "#8b4513" }}
                         >
-                          +
+                          <Plus size={14} color="#8b4513" />
                         </Button>
                       </div>
                       <div className="fw-bold mb-1">${(item.price * item.quantity).toFixed(2)}</div>
                       <Button
                         size="sm"
                         variant="link"
-                        className="text-danger p-0"
+                        className="p-0 d-flex align-items-center"
                         onClick={() => removeFromCart(item.id)}
+                        style={{ color: "#8b4513" }}
                       >
+                        <Trash2 size={14} color="#8b4513" className="me-1" />
                         Remove
                       </Button>
                     </Col>
@@ -79,7 +84,7 @@ const CartSidebar = ({ show, onHide }) => {
                 variant="warning"
                 size="lg"
                 className="w-100"
-                style={{ backgroundColor: "#8b4513", borderColor: "#8b4513", color: "#f5f5dc" }}
+                style={{ backgroundColor: "#8b4513", borderColor: "#8b4513" , color: "#f5f5dc" }}
               >
                 Proceed to Checkout
               </Button>

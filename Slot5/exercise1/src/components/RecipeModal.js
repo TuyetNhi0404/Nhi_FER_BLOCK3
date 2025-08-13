@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Modal, Button, Form, Row, Col, Image } from "react-bootstrap"
 import { useCart } from "../context/CartContext"
+import { Users, Clock, ChefHat, ShoppingCart } from "lucide-react"
 
 const RecipeModal = ({ show, onHide, recipe }) => {
   const [quantity, setQuantity] = useState(1)
@@ -37,15 +38,18 @@ const RecipeModal = ({ show, onHide, recipe }) => {
         <p className="text-muted">{recipe.description}</p>
 
         <Row className="mb-3">
-          <Col sm={6}>
-            <strong style={{ color: "#8b4513" }}>Servings:</strong> {recipe.servings}
+          <Col sm={6} className="d-flex align-items-center">
+            <Users size={16} color="#8b4513" className="me-2" />
+            <strong>Servings:</strong> <span className="ms-1">{recipe.servings}</span>
           </Col>
-          <Col sm={6}>
-            <strong style={{ color: "#8b4513" }}>Prep Time:</strong> {recipe.prep} mins
+          <Col sm={6} className="d-flex align-items-center">
+            <Clock size={16} color="#8b4513" className="me-2" />
+            <strong>Prep Time:</strong> <span className="ms-1">{recipe.prep} mins</span>
           </Col>
           {recipe.cook > 0 && (
-            <Col sm={6}>
-              <strong style={{ color: "#8b4513" }}>Cook Time:</strong> {recipe.cook} mins
+            <Col sm={6} className="d-flex align-items-center mt-2">
+              <ChefHat size={16} color="#8b4513" className="me-2" />
+              <strong>Cook Time:</strong> <span className="ms-1">{recipe.cook} mins</span>
             </Col>
           )}
         </Row>
@@ -68,7 +72,9 @@ const RecipeModal = ({ show, onHide, recipe }) => {
             </Form.Group>
           </Col>
           <Col sm={6} className="text-end">
-            <h4 className="mb-0" style={{ color: "#8b4513" }}>${(recipe.price * quantity).toFixed(2)}</h4>
+            <h4 className="mb-0" style={{ color: "#8b4513" }}>
+              ${(recipe.price * quantity).toFixed(2)}
+            </h4>
             <small className="text-muted">
               ${recipe.price} × {quantity}
             </small>
@@ -80,7 +86,12 @@ const RecipeModal = ({ show, onHide, recipe }) => {
         <Button variant="secondary" onClick={onHide}>
           Close
         </Button>
-        <Button onClick={handleAddToCart} style={{ backgroundColor: "#8b4513", borderColor: "#8b4513" }}>
+        <Button
+          onClick={handleAddToCart}
+          style={{ backgroundColor: "#8b4513", borderColor: "#8b4513", color: "#f5f5dc" }}
+          className="d-flex align-items-center"
+        >
+          <ShoppingCart size={16} color="#f5f5dc" className="me-2" />
           Add to Cart
         </Button>
       </Modal.Footer>

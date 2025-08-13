@@ -1,10 +1,11 @@
-"use client"
+
 
 import { useState } from "react"
-import { Navbar, Nav, Container, Button, Badge } from "react-bootstrap"
+import { Navbar, Nav, Container, Button} from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { useCart } from "../context/CartContext"
 import CartSidebar from "./CartSidebar"
+import { ChefHat, ShoppingCart } from "lucide-react"
 
 const Header = () => {
   const { getTotalCartItems } = useCart()
@@ -14,8 +15,8 @@ const Header = () => {
     <>
       <Navbar bg="light" expand="lg" sticky="top" className="shadow-sm" style={{ backgroundColor: "#f5f5dc" }}>
         <Container>
-          <Navbar.Brand href="/recipes" className="fw-bold" style={{ color: "#8b4513" }}>
-            <span className="me-2">🥗</span>
+          <Navbar.Brand href="/" className="fw-bold" style={{ color: "#8b4513" }}>
+            <ChefHat size={24} color="#8b4513" className="me-2" />
             Healthy Recipe Finder
           </Navbar.Brand>
 
@@ -31,6 +32,21 @@ const Header = () => {
               <LinkContainer to="/recipes">
                 <Nav.Link style={{ color: "#654321" }}>Recipes</Nav.Link>
               </LinkContainer>
+              <Nav.Link
+                style={{ color: "#654321", cursor: "pointer" }}
+                onClick={() => {
+                  
+                  window.location.hash = "#request-form"
+                  if (window.location.pathname !== "/recipes") {
+                    window.location.href = "/recipes#request-form"
+                  } else {
+                  
+                    window.dispatchEvent(new CustomEvent("openRequestForm"))
+                  }
+                }}
+              >
+                Recipe Request Form
+              </Nav.Link>
             </Nav>
 
             <div className="d-flex gap-2">
@@ -39,10 +55,11 @@ const Header = () => {
                 onClick={() => setShowCart(true)}
                 style={{ borderColor: "#8b4513", color: "#8b4513" }}
               >
-                🛒 Cart <Badge style={{ backgroundColor: "#8b4513" }}>{getTotalCartItems()}</Badge>
+                <ShoppingCart size={18} color="#8b4513" className="me-1" />
+                Cart (<badge variant="warning" style={{ color: "#8b4513" }}>{getTotalCartItems()}</badge>)
               </Button>
               <LinkContainer to="/recipes">
-                <Button variant="success" style={{ backgroundColor: "#f5f5dc", borderColor: "#8b4513", color: "#8b4513", borderRadius: "18px", minWidth: "200px" }}>
+                <Button variant="warning" style={{ backgroundColor: "#8b4513", borderColor: "#8b4513", color: "#f5f5dc" }}>
                   Browse Recipes
                 </Button>
               </LinkContainer>
