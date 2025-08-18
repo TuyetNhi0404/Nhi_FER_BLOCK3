@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-// Import components
 import NavigationBar from './components/NavigationBar';
 import HeroCarousel from './components/HeroCarousel';
 import MovieList from './components/MovieList';
@@ -9,10 +7,9 @@ import FavouriteMovies from './components/FavouriteMovies';
 import MovieRequestForm from './components/MovieRequestForm';
 import CustomToast from './components/CustomToast';
 
-// Import data
+
 import { movies } from './data/movies';
 
-// Import styles
 import './styles/App.css';
 
 const App = () => {
@@ -21,14 +18,12 @@ const App = () => {
   const [toastShow, setToastShow] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [toastVariant, setToastVariant] = useState('success');
- 
-  // Load favourites from localStorage on component mount
+
   useEffect(() => {
     const savedFavourites = JSON.parse(localStorage.getItem('movieFavourites') || '[]');
     setFavourites(savedFavourites);
   }, []);
 
-  // Save favourites to localStorage whenever favourites change
   useEffect(() => {
     localStorage.setItem('movieFavourites', JSON.stringify(favourites));
   }, [favourites]);
