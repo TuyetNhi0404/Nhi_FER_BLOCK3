@@ -22,10 +22,10 @@ const StudentDetailModal = ({ student, show, onHide }) => {
           <Col md={8}>
             <h4>{student.name}</h4>
             <p>
-              <strong>📧 Email:</strong> {student.email}
+              <strong>Email:</strong> {student.email}
             </p>
             <p>
-              <strong>🎂 Age:</strong> {student.age}
+              <strong>Age:</strong> {student.age}
             </p>
           </Col>
         </Row>

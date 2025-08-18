@@ -1,35 +1,21 @@
-"use client"
-import { Carousel } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
-const HeroCarousel = () => {
+const Hero = () => {
   return (
-    <Carousel className="mb-5">
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="/img/image11.png"
-          alt="Students in classroom"
-          style={{ height: "400px", objectFit: "cover" }}
-        />
-        <Carousel.Caption>
-          <h3>Welcome to Student Management System</h3>
-          <p>Manage your students efficiently and effectively</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="/img/image22.png"
-          alt="Diverse students"
-          style={{ height: "400px", objectFit: "cover" }}
-        />
-        <Carousel.Caption>
-          <h3>Track Student Progress</h3>
-          <p>Monitor academic performance and achievements</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+    <div className="bg-success text-white py-5 mb-5">
+      <Container>
+        <Row className="justify-content-center text-center">
+          <Col md={8}>
+            <h1 className="fw-bold display-4">Student Management</h1>
+            <p className="lead mt-3">
+              A simple and powerful system to manage student information, track progress, 
+              and monitor performance efficiently.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   )
 }
 
-export default HeroCarousel
+export default Hero

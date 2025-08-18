@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react"
 import NavigationBar from "./components/NavigationBar"
-import HeroCarousel from "./components/Hero"
+import Hero from "./components/Hero"
 import Filters from "./components/Filters"
 import StudentGrid from "./components/StudentGrid"
 import StudentDetailModal from "./components/StudentDetailModal"
@@ -64,7 +64,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-light">
       <NavigationBar />
-      <HeroCarousel />
+      <Hero />
 
       <div className="container py-5">
         <Filters
