@@ -82,7 +82,7 @@ const ProfileForm = ({ initialData, onSubmit, showToastDuration, cardMaxWidth })
       <div className="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100 bg-light">
         <div
           className="card shadow-lg"
-          style={{ maxWidth: cardMaxWidth || "400px", width: "100%" }}
+          style={{ maxWidth: cardMaxWidth || "1000px", width: "100%" }}
         >
           <div className="card-body p-4">
             <h2 className="card-title text-center mb-4 fw-bold">Profile Form</h2>
