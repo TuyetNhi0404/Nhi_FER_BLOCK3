@@ -200,7 +200,7 @@ const ProfileBuilderModal = ({ show, onHide, onSubmitSuccess }) => {
 
   return (
     <>
-      {/* Main Builder Modal */}
+     
       <Modal
         show={show}
         onHide={handleCloseModal}
@@ -262,13 +262,16 @@ const ProfileBuilderModal = ({ show, onHide, onSubmitSuccess }) => {
           </div>
         </Modal.Body>
         <Modal.Footer className="d-flex justify-content-between">
-          <Button
-            variant="outline-secondary"
-            onClick={prevStep}
-            disabled={currentStep === 0}
-          >
-            Previous
-          </Button>
+          {currentStep > 0 ? (
+           <Button
+           variant="outline-secondary"
+             onClick={prevStep}
+    >
+              Previous
+            </Button>
+  ) : (
+    <div />  
+  )}
           <div className="d-flex align-items-center">
             <span className="me-3 text-muted">
               Step {currentStep + 1} of {steps.length}
@@ -296,7 +299,7 @@ const ProfileBuilderModal = ({ show, onHide, onSubmitSuccess }) => {
         </Modal.Footer>
       </Modal>
 
-      {/* Summary Modal */}
+ 
       <Modal
         show={showSummaryModal}
         onHide={() => setShowSummaryModal(false)}
