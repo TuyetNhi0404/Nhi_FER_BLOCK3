@@ -190,10 +190,12 @@ function App() {
                   </tr>
                 ))
               ) : (
+               
                 <tr>
                   <td colSpan="4" className="text-center py-4 text-success">
                     <div>
                       <strong>No results found</strong>
+                      
                       <br />
                       <small>Try adjusting your filters</small>
                     </div>

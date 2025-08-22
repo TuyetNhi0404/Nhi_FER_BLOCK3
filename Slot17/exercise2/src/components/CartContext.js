@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -20,15 +20,6 @@ export const CartProvider = ({ children }) => {
   const totalValue = cartItems
     .reduce((acc, item) => acc + parseFloat(item.price), 0)
     .toFixed(2);
-
-  useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cartItems"));
-    if (savedCart) setCartItems(savedCart);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
 
   return (
     <CartContext.Provider

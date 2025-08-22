@@ -15,7 +15,7 @@ const MovieList = ({ movies, favourites, onAddToFavourite }) => {
   const filteredAndSortedMovies = useMemo(() => {
     let filtered = movies.filter(movie => {
       const matchesSearch = movie.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           movie.description.toLowerCase().includes(searchTerm.toLowerCase());
+                            movie.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesGenre = selectedGenre === 'All' || movie.genre === selectedGenre;
       return matchesSearch && matchesGenre;
     });

@@ -1,0 +1,111 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "email": "alice@mail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "email": "bob@mail.com",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "email": "charlie@mail.com",
+      "password": "123456"
+    },
+    {
+      "id": "f521",
+      "name": "Nhi Bui",
+      "email": "nhibttde180868@fpt.edu.vn",
+      "phone": "0976456356",
+      "address": "123 123"
+    },
+    {
+      "id": "1a79",
+      "name": "Nhi",
+      "email": "nhibttde180868@fpt.edu.vn",
+      "phone": "0976456356",
+      "address": "123 123"
+    }
+  ],
+  "dishes": [
+    {
+      "id": 0,
+      "name": "Uthappizza",
+      "image": "/img/image1.png",
+      "price": "4.99",
+      "description": "A unique combination of Indian Uthappam and Italian pizza."
+    },
+    {
+      "id": 1,
+      "name": "Zucchipakoda",
+      "image": "/img/image2.png",
+      "price": "1.99",
+      "description": "Deep fried Zucchini with chickpea batter."
+    },
+    {
+      "id": 2,
+      "name": "Vadonut",
+      "image": "/img/image3.png",
+      "price": "1.99",
+      "description": "A combination of vada and donut."
+    },
+    {
+      "id": 3,
+      "name": "ElaiCheese Cake",
+      "image": "/img/image4.png",
+      "price": "2.99",
+      "description": "New York Style Cheesecake with Indian cardamoms."
+    },
+    {
+      "id": 4,
+      "name": "Lobster Thermidor",
+      "image": "/img/image5.png",
+      "price": "29.99",
+      "description": "Succulent lobster baked in a creamy white wine sauce, served with herbs."
+    },
+    {
+      "id": 5,
+      "name": "Wagyu Steak",
+      "image": "/img/image6.png",
+      "price": "49.99",
+      "description": "Premium Japanese Wagyu beef grilled to perfection, melt-in-your-mouth texture."
+    }
+  ],
+  "carouselImages": [
+    {
+      "id": 1,
+      "src": "/images/carousel1.jpg",
+      "alt": "Delicious Food 1",
+      "caption": "Discover Amazing Flavors"
+    },
+    {
+      "id": 2,
+      "src": "/images/carousel2.jpg",
+      "alt": "Delicious Food 2",
+      "caption": "Fresh Ingredients Daily"
+    },
+    {
+      "id": 3,
+      "src": "/images/carousel3.jpg",
+      "alt": "Delicious Food 3",
+      "caption": "Order Now for Best Experience"
+    }
+  ],
+  "cart": [],
+  "favourites": [
+    {
+      "id": 3,
+      "name": "ElaiCheese Cake",
+      "image": "/img/image4.png",
+      "price": "2.99",
+      "description": "New York Style Cheesecake with Indian cardamoms.",
+      "favouriteId": "26711ccf-e32c-4888-9e66-24b50b1da222"
+    }
+  ]
+}

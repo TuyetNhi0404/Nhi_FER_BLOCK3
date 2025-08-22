@@ -74,7 +74,7 @@ const Cart = ({ darkMode }) => {
           bg={toastMsg.includes("⚠️") ? "warning" : "success"}
           onClose={() => setShowToast(false)}
           show={showToast}
-          delay={10000}
+          delay={5000}
           autohide
         >
           <Toast.Header closeButton={false}>
