@@ -45,19 +45,24 @@ export const FavouritesProvider = ({ children }) => {
     })();
   }, []);
 
-  // Thêm sản phẩm vào favourites (id gốc giữ nguyên, favouriteId dùng để quản lý trong DB)
-  const addToFavourites = async (product) => {
-    const newItem = { ...product, favouriteId: uuidv4() };
-    try {
-      await fetch(API, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newItem),
-      });
-      dispatch({ type: "ADD_TO_FAVOURITES", payload: newItem });
-    } catch (e) {
-      console.error("addToFavourites error:", e);
-    }
+  // Thêm sản phẩm vào favourites 
+const addToFavourites = async (product) => {
+
+  
+      const newItem = { ...product, productId: product.id, quantity: 1 };
+
+      try {
+        const res = await fetch(API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newItem),
+        });
+        const saved = await res.json();
+        dispatch({ type: "ADD_TO_FAVOURITES", payload: saved });
+      } catch (e) {
+        console.error("addToFAVOURITES error:", e);
+      }
+    
   };
 
   // Xóa khỏi favourites bằng favouriteId
@@ -69,19 +74,20 @@ export const FavouritesProvider = ({ children }) => {
     }
     dispatch({ type: "REMOVE_FROM_FAVOURITES", payload: favouriteId });
   };
-
+  
   // Xóa hết favourites
   const clearFavourites = async () => {
     try {
-      for (const item of state.items) {
-        await fetch(`${API}/${item.favouriteId}`, { method: "DELETE" });
-      }
+      await Promise.all(
+        state.items.map((item) =>
+          fetch(`${API}/${item.id}`, { method: "DELETE" })
+        )
+      );
+      dispatch({ type: "CLEAR_FAVOURITES" });
     } catch (e) {
-      console.warn("clearFavourites warnings:", e);
+      console.warn("clearFavourites error:", e);
     }
-    dispatch({ type: "CLEAR_FAVOURITES" });
   };
-
   // Kiểm tra đã có trong favourites theo product.id gốc
   const isFavourite = (id) => state.items.some((i) => i.id === id);
 

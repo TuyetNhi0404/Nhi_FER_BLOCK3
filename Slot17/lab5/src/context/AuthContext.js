@@ -11,16 +11,20 @@ export const AuthProvider = ({ children }) => {
   // ---- LOGIN ----
   const login = async (username, password) => {
     try {
+      // Chỉ tìm theo username
       const res = await fetch(
-        `http://localhost:3001/accounts?username=${username}&password=${password}`
+        `http://localhost:3001/accounts?username=${username}`
       );
       const data = await res.json();
 
-      if (data.length > 0) {
+      // Nếu tồn tại user thì check mật khẩu
+      if (data.length > 0 && data[0].password === password) {
         setUser(data[0]);
         setIsLoggedIn(true);
         return true;
       }
+
+      // Sai mật khẩu hoặc không tìm thấy user
       return false;
     } catch (err) {
       console.error("Login error:", err);
@@ -31,11 +35,24 @@ export const AuthProvider = ({ children }) => {
   // ---- REGISTER ----
   const register = async (newUser) => {
     try {
+      // Kiểm tra trùng username
+      const checkRes = await fetch(
+        `http://localhost:3001/accounts?username=${newUser.username}`
+      );
+      const existingUser = await checkRes.json();
+
+      if (existingUser.length > 0) {
+        console.error("Username already exists!");
+        return null; // username đã tồn tại
+      }
+
+      // Nếu chưa có thì tạo mới
       const res = await fetch("http://localhost:3001/accounts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
       });
+
       const savedUser = await res.json();
       setUser(savedUser);
       setIsLoggedIn(true);

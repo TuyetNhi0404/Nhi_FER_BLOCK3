@@ -1,61 +1,60 @@
-import React, { useState, useEffect } from 'react';
-import { Carousel } from 'react-bootstrap';
-import { useTheme } from '../context/ThemeContext';
+import { Carousel } from "react-bootstrap";
 
-const FoodCarousel = () => {
-  const { colors } = useTheme();
-  const [carouselData, setCarouselData] = useState([]);
-
-  useEffect(() => {
-    const fetchCarouselData = async () => {
-      try {
-        const res = await fetch("http://localhost:3001/carousels"); // lấy từ db.json
-        const data = await res.json();
-        setCarouselData(data);
-      } catch (err) {
-        console.error("Error fetching carousel data:", err);
-      }
-    };
-    fetchCarouselData();
-  }, []);
-
-  const carouselStyle = {
-    maxHeight: '400px',
-    borderRadius: '10px',
-    overflow: 'hidden',
-    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
-    border: `3px solid ${colors.secondary}`
-  };
-
-  const imageStyle = {
-    height: '400px',
-    objectFit: 'cover',
-    filter: 'brightness(0.8)'
-  };
-
-  const captionStyle = {
-    backgroundColor: `${colors.primary}99`,
-    color: colors.text,
-    padding: '20px',
-    borderRadius: '10px 10px 0 0',
-    fontWeight: 'bold',
-    fontSize: '1.2rem'
-  };
+const HeroCarousel = () => {
+  const carouselItems = [
+    {
+      title: "Delicious Food",
+      description: "Discover Amazing Flavors",
+      image: "/img/image7.png",
+    },
+    {
+      title: "Amazing Collection",
+      description: "Add your favorite dishes to your personal collection",
+      image: "/img/image8.png",
+    },
+    {
+      title: "Taste the Best",
+      description: "Good Food!",
+      image: "/img/image9.png",
+    },
+  ];
 
   return (
-    <div className="mb-5">
-      <Carousel style={carouselStyle} interval={3000} controls indicators fade>
-        {carouselData.map((item) => (
-          <Carousel.Item key={item.id}>
-            <img
-              className="d-block w-100"
-              src={item.src}
-              alt={item.alt}
-              style={imageStyle}
-            />
-            <Carousel.Caption style={captionStyle}>
-              <h3>{item.caption}</h3>
-            </Carousel.Caption>
+    <div className="mb-5" style={{ width: "100%" }}>
+      <Carousel
+        controls={true}
+        indicators={true}
+        interval={5000}
+        pause="hover"
+        className="mb-0"
+      >
+        {carouselItems.map((item, index) => (
+          <Carousel.Item key={index}>
+            <div style={{ height: "500px", position: "relative" }}>
+              <img
+                className="d-block w-100 h-100"
+                src={item.image || "/placeholder.svg"}
+                alt={item.title}
+                style={{ objectFit: "cover" }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "30px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  background: "rgba(34, 139, 34, 0.9)",
+                  color: "#d6f5d6",
+                  padding: "20px 30px",
+                  borderRadius: "10px",
+                  maxWidth: "600px",
+                  textAlign: "center",
+                }}
+              >
+                <h3 className="mb-2">{item.title}</h3>
+                <p className="mb-0">{item.description}</p>
+              </div>
+            </div>
           </Carousel.Item>
         ))}
       </Carousel>
@@ -63,4 +62,4 @@ const FoodCarousel = () => {
   );
 };
 
-export default FoodCarousel;
+export default HeroCarousel;

@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
     <div style={heroStyle}>
-      <Container>
+      <Container fluid style={{ padding: "0 100px" }}>
         <Row className="justify-content-center">
           <Col lg={10}>
             <FoodCarousel />
@@ -47,10 +47,6 @@ const Home = () => {
           <Col lg={8}>
             <div style={welcomeStyle}>
               <h1 className="display-4 mb-4">Welcome to Food Ordering</h1>
-              <p className="lead mb-4">
-                Discover delicious dishes made with fresh ingredients. 
-                Order now for the best culinary experience!
-              </p>
               <Button
                 as={Link}
                 to="/products"

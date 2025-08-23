@@ -44,7 +44,7 @@ const AppContent = () => {
       <footer style={footerStyle}>
         <Container>
           <p className="mb-0">
-            © {new Date().getFullYear()} Food Ordering App. Made with ❤️ for food lovers.
+            © {new Date().getFullYear()} Food Ordering App.
           </p>
         </Container>
       </footer>

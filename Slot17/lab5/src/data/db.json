@@ -31,6 +31,13 @@
       "email": "nhibttde180868@fpt.edu.vn",
       "phone": "0976456356",
       "address": "123 123"
+    },
+    {
+      "id": "3b6c",
+      "name": "Nhi Bui",
+      "email": "nhibttde180868@fpt.edu.vn",
+      "phone": "0976456356",
+      "address": "fgbf"
     }
   ],
   "dishes": [
@@ -80,19 +87,19 @@
   "carouselImages": [
     {
       "id": 1,
-      "src": "/images/carousel1.jpg",
+      "src": "/img/image7.png",
       "alt": "Delicious Food 1",
       "caption": "Discover Amazing Flavors"
     },
     {
       "id": 2,
-      "src": "/images/carousel2.jpg",
+      "src": "/img/image8.png",
       "alt": "Delicious Food 2",
       "caption": "Fresh Ingredients Daily"
     },
     {
       "id": 3,
-      "src": "/images/carousel3.jpg",
+      "src": "/img/image9.png",
       "alt": "Delicious Food 3",
       "caption": "Order Now for Best Experience"
     }
@@ -105,7 +112,8 @@
       "image": "/img/image4.png",
       "price": "2.99",
       "description": "New York Style Cheesecake with Indian cardamoms.",
-      "favouriteId": "26711ccf-e32c-4888-9e66-24b50b1da222"
+      "productId": 3,
+      "quantity": 1
     }
   ]
 }

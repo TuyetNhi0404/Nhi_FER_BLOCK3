@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Container, Row, Col, Form, InputGroup, Button } from 'react-bootstrap';
 import { useTheme } from '../context/ThemeContext';
 import ProductCard from '../components/ProductCard';
+import FoodCarousel from '../components/FoodCarousel'; // 👈 Import carousel
 
 const Products = () => {
   const { colors } = useTheme();
@@ -9,19 +10,21 @@ const Products = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('name');
   const [filterBy, setFilterBy] = useState('all');
-useEffect(() => {
-  const fetchProducts = async () => {
-    try {
-      const res = await fetch("http://localhost:3001/dishes"); // URL json-server
-      const data = await res.json();
-      setProducts(data);
-    } catch (err) {
-      console.error("Error fetching products:", err);
-    }
-  };
 
-  fetchProducts();
-}, []);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/dishes"); // URL json-server
+        const data = await res.json();
+        setProducts(data);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -72,10 +75,11 @@ useEffect(() => {
   };
 
   return (
-    <div style={pageStyle}>
-      <Container>
+    <>
+     <FoodCarousel />
         <h2 className="text-center mb-4">Our Products</h2>
-        
+    <Container fluid style={{ padding: "0 100px" }}>
+
         <div style={controlsStyle}>
           <Row className="align-items-end">
             <Col md={4} className="mb-3">
@@ -150,7 +154,7 @@ useEffect(() => {
           )}
         </Row>
       </Container>
-    </div>
+    </>
   );
 };
 
