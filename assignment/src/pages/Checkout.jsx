@@ -12,7 +12,7 @@ export default function Checkout() {
 
   const placeOrder = async () => {
     if (!items.length) return;
-    if (!user) return toast.addToast({ bg: "info", body: "Please sign in to checkout" });
+    if (!user) return toast.addToast({ bg: "success", body: "Please sign in to checkout" });
     const order = {
       userId: user.id,
       items,

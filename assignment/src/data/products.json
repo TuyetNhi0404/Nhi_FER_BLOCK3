@@ -5,8 +5,8 @@
       "title": "Elegant White Blouse",
       "name": "Lsoul",
       "image": "/img/image1.png",
-      "price": 599000,
-      "salePrice": 449000,
+      "price": 5999000,
+      "salePrice": 4490000,
       "description": "Classic white blouse with premium cotton fabric, perfect for office and formal occasions.",
       "tags": [
         "hot",
@@ -18,8 +18,8 @@
       "title": "Bohemian Floral Maxi Dress",
       "name": "Lsoul",
       "image": "/img/image2.png",
-      "price": 899000,
-      "salePrice": 699000,
+      "price": 8999000,
+      "salePrice": 6999000,
       "description": "Beautiful floral print maxi dress in soft chiffon fabric, perfect for summer outings and beach trips.",
       "tags": [
         "sale"
@@ -30,7 +30,7 @@
       "title": "High-Waisted Skinny Jeans",
       "name": "Lsoul",
       "image": "/img/image11.png",
-      "price": 799000,
+      "price": 7999000,
       "description": "Premium denim high-waisted skinny jeans with stretch comfort, timeless design that never goes out of style.",
       "tags": []
     },
@@ -39,8 +39,8 @@
       "title": "Cropped Blazer Jacket",
       "name": "Lsoul",
       "image": "/img/image12.png",
-      "price": 1299000,
-      "salePrice": 999000,
+      "price": 12990000,
+      "salePrice": 9990000,
       "description": "Stylish cropped blazer in premium fabric, perfect for professional and casual chic looks.",
       "tags": [
         "hot",
@@ -52,7 +52,7 @@
       "title": "Little Black Evening Dress",
       "name": "Lsoul",
       "image": "/img/image3.png",
-      "price": 1599000,
+      "price": 15990000,
       "description": "Elegant little black dress in luxurious silk fabric, perfect for evening parties and special occasions.",
       "tags": [
         "hot"
@@ -63,8 +63,8 @@
       "title": "Cotton Basic T-Shirt",
       "name": "Lsoul",
       "image": "/img/image4.png",
-      "price": 199000,
-      "salePrice": 149000,
+      "price": 1999000,
+      "salePrice": 1499000,
       "description": "Premium 100% cotton basic t-shirt in regular fit, available in multiple colors, easy to mix and match.",
       "tags": [
         "sale"
@@ -75,7 +75,7 @@
       "title": "Pleated A-Line Skirt",
       "name": "Lsoul",
       "image": "/img/image5.png",
-      "price": 699000,
+      "price": 6999000,
       "description": "Elegant pleated A-line skirt in cotton blend fabric, perfect for office and professional settings.",
       "tags": [
         "hot"
@@ -86,8 +86,8 @@
       "title": "Denim Mini Skirt",
       "name": "Lsoul",
       "image": "/img/image6.png",
-      "price": 459000,
-      "salePrice": 349000,
+      "price": 4599000,
+      "salePrice": 3499000,
       "description": "Trendy denim mini skirt with vintage wash, perfect for casual summer styling.",
       "tags": [
         "sale"
@@ -98,7 +98,7 @@
       "title": "Silk Wrap Top",
       "name": "Lsoul",
       "image": "/img/image7.png",
-      "price": 899000,
+      "price": 8999000,
       "description": "Luxurious silk wrap top with elegant design, perfect for sophisticated and feminine looks.",
       "tags": []
     },
@@ -107,7 +107,7 @@
       "title": "Oversized Knit Sweater",
       "name": "Lsoul",
       "image": "/img/image8.png",
-      "price": 799000,
+      "price": 7999000,
       "description": "Cozy oversized knit sweater in soft wool blend, perfect for layering and autumn styling.",
       "tags": []
     },
@@ -116,8 +116,8 @@
       "title": "Wide-Leg Trousers",
       "name": "Lsoul",
       "image": "/img/image9.png",
-      "price": 1199000,
-      "salePrice": 899000,
+      "price": 11990000,
+      "salePrice": 8990000,
       "description": "Elegant wide-leg trousers with comfortable stretch fabric, perfect for professional and smart casual wear.",
       "tags": [
         "sale"
@@ -128,7 +128,7 @@
       "title": "Cashmere Cardigan",
       "name": "Lsoul",
       "image": "/img/image10.png",
-      "price": 1599000,
+      "price": 15990000,
       "description": "Luxurious cashmere cardigan with button closure, perfect for layering and sophisticated styling.",
       "tags": [
         "hot"
