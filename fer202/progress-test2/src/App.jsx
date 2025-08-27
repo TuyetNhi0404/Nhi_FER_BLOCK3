@@ -5,9 +5,9 @@ function App() {
   
   return (
     <>
-      <div className='container py-4'>
+     
         <AppRoutes />
-      </div>
+      
     </>
   )
 }
